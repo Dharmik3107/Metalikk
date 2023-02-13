@@ -65,6 +65,7 @@ const WebTitle = styled.h1`
 const SVGRightArrow = styled.svg`
   margin-left: 10px;
   fill: ${theme.secondary};
+  transition-delay: 0.2s;
 `;
 const Sidebar = () => {
   return (
