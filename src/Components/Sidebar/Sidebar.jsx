@@ -2,6 +2,7 @@ import React from "react";
 import { theme } from "../Theme/Theme";
 import styled from "styled-components";
 import Socials from "../Socials/Socials";
+import { NavLink } from "react-router-dom";
 
 const Navbar = styled.nav`
   position: absolute;
@@ -38,17 +39,18 @@ const NavItem = styled.li`
   text-align: center;
   padding: 10px 0px;
   border-top: 1px solid ${theme.border};
-  transition: 0.4s all;
   &:last-child {
     border-bottom: 1px solid ${theme.border};
   }
+`;
+
+const ActiveLink = styled(NavLink)`
+  color: ${theme.secondary};
+  text-decoration: none;
+  transition: 0.4s all;
   &:hover {
     cursor: pointer;
     color: ${theme.Hover};
-  }
-  &:hover svg {
-    filter: brightness(0) saturate(100%) invert(76%) sepia(34%) saturate(3998%)
-      hue-rotate(97deg) brightness(107%) contrast(101%);
   }
 `;
 
@@ -62,33 +64,22 @@ const WebTitle = styled.h1`
   }
 `;
 
-const SVGRightArrow = styled.svg`
-  margin-left: 10px;
-  fill: ${theme.secondary};
-  transition-delay: 0.2s;
-`;
 const Sidebar = () => {
   return (
     <Navbar>
-      <WebTitle>METALIKK</WebTitle>
+      <WebTitle>
+        <ActiveLink to="/">METALIKK</ActiveLink>
+      </WebTitle>
       <NavList>
         <NavItem>
-          Shapes
-          <SVGRightArrow
-            width="12"
-            height="16"
-            viewBox="0 0 12 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M10.7 8.83008L4.05939 15.4707C3.6004 15.9297 2.85822 15.9297 2.40411 15.4707L1.3006 14.3672C0.841614 13.9082 0.841614 13.166 1.3006 12.7119L6.00763 8.00488L1.3006 3.29785C0.841614 2.83887 0.841614 2.09668 1.3006 1.64258L2.39923 0.529297C2.85822 0.0703125 3.6004 0.0703125 4.0545 0.529297L10.6951 7.16992C11.159 7.62891 11.159 8.37109 10.7 8.83008Z"
-              fill="white"
-            />
-          </SVGRightArrow>
+          <ActiveLink to="/shapes">Shapes</ActiveLink>
         </NavItem>
-        <NavItem>About</NavItem>
-        <NavItem>Contact</NavItem>
+        <NavItem>
+          <ActiveLink to="/about">About</ActiveLink>
+        </NavItem>
+        <NavItem>
+          <ActiveLink to="/contact">Contact</ActiveLink>
+        </NavItem>
       </NavList>
       <Socials />
     </Navbar>

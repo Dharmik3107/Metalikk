@@ -1,26 +1,25 @@
 import React from "react";
-import HeroText from "../Components/HeroText/HeroText";
 import Sidebar from "../Components/Sidebar/Sidebar";
 import styled from "styled-components";
+import AboutText from "../Components/AboutText/AboutText";
 
 const Main = styled.main`
   width: calc(100vw - 45px);
   height: 100vh;
   min-height: 720px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-left: 90px !important;
 `;
 
-const Hero = () => {
+const About = () => {
   return (
     <Main>
       <Sidebar />
-      <HeroText />
+      <AboutText />
     </Main>
   );
 };
 
-export default Hero;
+export default About;
