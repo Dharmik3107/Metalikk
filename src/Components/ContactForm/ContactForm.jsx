@@ -138,20 +138,20 @@ const ContactForm = () => {
         <NameContainer>
           <Field>
             <Labels>First Name</Labels>
-            <NameInput placeholder="Enter First Name" />
+            <NameInput placeholder="Enter First Name" required />
           </Field>
           <Field>
             <Labels>Last Name</Labels>
-            <NameInput placeholder="Enter Last Name" />
+            <NameInput placeholder="Enter Last Name" required />
           </Field>
         </NameContainer>
         <Field>
           <Labels>Email Address</Labels>
-          <EmailInput placeholder="Enter Email Address" />
+          <EmailInput placeholder="Enter Email Address" required />
         </Field>
         <Field>
           <Labels>Message</Labels>
-          <TextBox placeholder="Enter your valuable message here..." />
+          <TextBox placeholder="Enter your valuable message here..." required />
         </Field>
       </Form>
       <Button type="submit">Email Me!</Button>
